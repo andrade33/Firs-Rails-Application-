@@ -1,0 +1,37 @@
+<p style="color: green"><%= notice %></p>
+
+<h2>Contact List</h2>
+<h3>I always dreamed of doing to do that! kkkkkk</h3>
+
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Telefone</th>
+        <th>Endereço</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @contatos.each do |contato| %>
+        <tr>
+          <td><%= contato.nome %></td>
+          <td><%= contato.telefone %></td>
+          <td><%= contato.endereco %></td>
+          <td><%= link_to 'Mostrar', contato %></td>
+          <td><%= link_to 'Editar', edit_contato_path(contato) %></td>
+          <td><%= link_to 'Excluir', contato, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+<div>
+      <%= link_to "Mostrar Contatos", @Contatos %>
+      <%= link_to "Novo Contato", new_contato_path %>
+</div>
